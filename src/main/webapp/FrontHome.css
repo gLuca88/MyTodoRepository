@@ -1,0 +1,105 @@
+body {
+    background-color: black;
+}
+
+img {
+    height: 100px;
+    height: 100px;
+}
+
+/* Seleziono l'immagine di sfondo e la posiziono al centro */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+}
+
+/* Seleziono il contenitore generale e imposto il margine e il padding */
+.container {
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Seleziono il logo e imposto la larghezza e l'allineamento */
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Seleziono il titolo e imposto il colore, il font e l'effetto ombra */
+.title {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* Seleziono i titoli di secondo livello e imposto il colore e il font */
+h2 {
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Seleziono i campi di input e imposto il colore, il bordo e il padding */
+.form-control {
+    color: black;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+/* Seleziono il pulsante di invio e imposto il colore, il bordo, il padding e l'effetto hover */
+.btn {
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Seleziono il piÃ¨ di pagina e imposto il colore e il font */
+footer {
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Seleziono le liste non ordinate e imposto lo stile e il margine */
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+/* Seleziono le immagini delle icone social e imposto la larghezza e il margine */
+ul img {
+    width: 30px;
+    margin: 10px;
+}
+
+h1 {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+select {
+    color: white;
+}
+
+.fa {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+}

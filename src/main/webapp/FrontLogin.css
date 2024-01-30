@@ -1,0 +1,39 @@
+	h1 {
+			text-align: center;
+			color: white;
+			font-family: Arial;
+		}
+
+		.newsletter {
+			background-color: #fff;
+			padding: 20px;
+			margin: 20px;
+			margin-bottom: 10px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px #333;
+		}
+
+		.newsletter h2 {
+			text-align: center;
+		}
+
+		.newsletter form {
+			display: table;
+			margin: 0 auto;
+		}
+
+		.newsletter label,
+		.newsletter input {
+			display: table-row;
+			padding: 10px;
+		}
+
+		header {
+			background-color: black;
+		}
+
+		a {
+			text-align: center;
+			color: white;
+			font-family: Arial;
+		}
