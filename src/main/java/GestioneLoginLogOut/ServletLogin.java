@@ -19,6 +19,7 @@ public class ServletLogin extends HttpServlet {
 
 protected void doPost(HttpServletRequest request, HttpServletResponse response)
 		throws ServletException, IOException {
+	System.out.println("enter in servlet");
 	// logica lato server
     Support db =new Support();
 	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1

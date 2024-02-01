@@ -5,61 +5,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Document</title>
-	 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-		crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	    	<style>
-		h1 {
-			text-align: center;
-			color: white;
-			font-family: Arial;
-		}
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+h1 {
+	text-align: center;
+	color: white;
+	font-family: Arial;
+}
 
-		.newsletter {
-			background-color: #fff;
-			padding: 20px;
-			margin: 20px;
-			margin-bottom: 10px;
-			border-radius: 10px;
-			box-shadow: 0 0 10px #333;
-		}
+.newsletter {
+	background-color: #fff;
+	padding: 20px;
+	margin: 20px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #333;
+}
 
-		.newsletter h2 {
-			text-align: center;
-		}
+.newsletter h2 {
+	text-align: center;
+}
 
-		.newsletter form {
-			display: table;
-			margin: 0 auto;
-		}
+.newsletter form {
+	display: table;
+	margin: 0 auto;
+}
 
-		.newsletter label,
-		.newsletter input {
-			display: table-row;
-			padding: 10px;
-		}
+.newsletter label, .newsletter input {
+	display: table-row;
+	padding: 10px;
+}
 
-		header {
-			background-color: black;
-		}
+header {
+	background-color: black;
+}
 
-		a {
-			text-align: center;
-			color: white;
-			font-family: Arial;
-		}
-	</style>
+a {
+	text-align: center;
+	color: white;
+	font-family: Arial;
+}
+</style>
 </head>
 
 <body>
 	<header>
 
 		<h1>Benvenuto nella nostra applicazione</h1>
-		<br> <a href="paginaRegistrazione.html">Se non sei registrato
-			Clicca QUI Registra i tuoi dati e poi effettua il login</a>
+
 
 	</header>
 	<br>

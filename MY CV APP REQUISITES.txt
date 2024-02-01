@@ -1,0 +1,6 @@
+SIMPLE TODO LIST APP WITH SERVLET AND JSP
+
+1. Login
+2. Inserimento, cancellazione, aggiornamento, ricerca per data, status, descrizoine di un task (ES: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_todo)
+3. Un task deve avere una data di creazione, data entro cui essere completato, status (Da fare, fatto) e una descrizione
+4.Usare MAVEN !!!!!!!

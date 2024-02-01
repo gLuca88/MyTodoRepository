@@ -1,0 +1,23 @@
+Create dataBase myTodoApp;
+
+Create Table Utente (
+idUtente INT PRIMARY KEY auto_increment,
+email VarChar(20) NOT NULL,
+passwordUtente VarChar(20) unique
+);
+
+Create Table impegni(
+id INT PRIMARY KEY AUTO_INCREMENT,
+dataAppuntamento DATE NOT NULL,
+descrizione VARCHAR(200),
+oraInizio time(0),
+oraFine time(0),
+status Varchar(20)
+);
+
+select *from impegni;
+drop Table impegni;
+
+Insert into utente(email,passwordUtente)
+values('gianluca@88','password2');
+Select *from utente;
