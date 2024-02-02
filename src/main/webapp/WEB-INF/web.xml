@@ -59,4 +59,24 @@
 		<servlet-name>ServletVisualizzazione</servlet-name>
 		<url-pattern>/ServletVisualizzazione</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ServletModificaStato</display-name>
+		<servlet-name>ServletModificaStato</servlet-name>
+		<servlet-class>GestioneModifiche.ServletModificaStato</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletModificaStato</servlet-name>
+		<url-pattern>/ServletModificaStato</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ServletElimina</display-name>
+		<servlet-name>ServletElimina</servlet-name>
+		<servlet-class>GestioneModifiche.ServletElimina</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletElimina</servlet-name>
+		<url-pattern>/ServletElimina</url-pattern>
+	</servlet-mapping>
 </web-app>

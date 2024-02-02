@@ -96,23 +96,33 @@
 		</div>
 		<br> <label for="status">Inserisci status :</label> <select
 			class="form-control" id="status" name="status">
+			<option value="Non Definito">Non Definito</option>
 			<option value="Fatto">Fatto</option>
 			<option value="Da Fare">Da Fare</option>
-			<option value="Non Definito">Non Definito</option>
+
 		</select> <br> <input class="btn btn-info" type="submit" value="Registra">
 	</form>
 	<br>
 	<form action=ServletVisualizzazione method="get">
 		<input class="btn btn-info" type="submit"
 			value="visualizza appuntamenti">
-	</form><br>
-<div class="form-group">
-	<form action=ServletVisualizzazione method="get">
-    <label for="idCompletatoModifica">Inserisci ID Appuntamento Da Segnare Come COMPLETATO:</label>
-    <input class="form-control" type="number" id="idCompletatoModifica" name="idCompletatoModifica"><br>
-    <input class="btn btn-info" type="submit" value="Conferma">
-    </form>
-</div>
+	</form>
+	<br>
+	<div class="form-group">
+		<form action=ServletModificaStato method="post">
+			<label for="idCompletatoModifica">Inserisci ID Appuntamento A
+				cui Modificare lo status:</label> <input class="form-control" type="number"
+				id="idCompletatoModifica" name="idCompletatoModifica"><br>
+			<label for="statusNuovo">Inserisci Nuovo status :</label><br><select
+				class="form-control" id="statusNuovo" name="statusNuovo">
+				<option value="Non Definito">Non Definito</option>
+				<option value="Fatto">Fatto</option>
+				<option value="Da Fare">Da Fare</option>
+
+			</select> <br><input class="btn btn-info" type="submit" value="Modifica Status">
+		</form>
+		<a href="PagModificaAppuntamento.jsp">Sezione Modifica Tutto il tuo appuntamento o Elimina</a>
+	</div>
 	<footer>
 		<div class="container">
 			<p>Contattaci:</p>
