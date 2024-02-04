@@ -113,15 +113,18 @@
 			<label for="idCompletatoModifica">Inserisci ID Appuntamento A
 				cui Modificare lo status:</label> <input class="form-control" type="number"
 				id="idCompletatoModifica" name="idCompletatoModifica"><br>
-			<label for="statusNuovo">Inserisci Nuovo status :</label><br><select
-				class="form-control" id="statusNuovo" name="statusNuovo">
+			<label for="statusNuovo">Inserisci Nuovo status :</label><br>
+			<select class="form-control" id="statusNuovo" name="statusNuovo">
 				<option value="Non Definito">Non Definito</option>
 				<option value="Fatto">Fatto</option>
 				<option value="Da Fare">Da Fare</option>
 
-			</select> <br><input class="btn btn-info" type="submit" value="Modifica Status">
+			</select> <br>
+			<input class="btn btn-info" type="submit" value="Modifica Status">
 		</form>
-		<a href="PagModificaAppuntamento.jsp">Sezione Modifica Tutto il tuo appuntamento o Elimina</a>
+		<a href="PagModificaAppuntamento.jsp">Sezione Modifica Tutto il
+			tuo appuntamento o Elimina</a><br> <a href="FiltriDate.jsp">Sezione
+			Filtra i tuoi appuntamenti per data</a>
 	</div>
 	<footer>
 		<div class="container">

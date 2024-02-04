@@ -1,6 +1,7 @@
-package GestioneVisualizzazione;
+package GestioneFiltri;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,18 +17,17 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ServletVisualizzazione extends HttpServlet {
+public class ServletCercaPerData extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	Support db = new Support();
 
-	public ServletVisualizzazione() {
+	public ServletCercaPerData() {
 		// vuoto
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("enter servlet visualizzazione");
+		String dataAppuntamento = request.getParameter("dataFiltro");
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
@@ -69,7 +69,7 @@ public class ServletVisualizzazione extends HttpServlet {
 		out.println("</tr>");
 		out.println("</thead>");
 		out.println("<tbody>");
-		List<Appuntamento> appuntamenti = getAppuntamentiFromDB();
+		List<Appuntamento> appuntamenti = getAppuntamentiFromDB(dataAppuntamento);
 		for (Appuntamento appuntamento : appuntamenti) {
 			out.println("<tr>");
 			out.println("<td>" + appuntamento.getId() + "</td>");
@@ -86,15 +86,16 @@ public class ServletVisualizzazione extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 
-	}// chiusura do get
+	}// close do get
 
-	private List<Appuntamento> getAppuntamentiFromDB() {
+	private List<Appuntamento> getAppuntamentiFromDB(String data) {
 
 		List<Appuntamento> appuntamenti = new ArrayList<Appuntamento>();
 		try {
 			Connection con = db.OpenConnection();
-			String query = "SELECT * FROM impegni";
+			String query = "SELECT * FROM impegni where dataAppuntamento=?";
 			PreparedStatement pstmt = con.prepareStatement(query);
+			pstmt.setString(1, data);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Appuntamento appuntamento = new Appuntamento();
@@ -119,4 +120,4 @@ public class ServletVisualizzazione extends HttpServlet {
 
 	}// metodo che prende i dati dal db
 
-}// chiusura classe
+}// close servlet

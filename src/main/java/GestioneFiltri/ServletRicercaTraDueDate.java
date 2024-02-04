@@ -1,6 +1,7 @@
-package GestioneVisualizzazione;
+package GestioneFiltri;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,18 +17,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ServletVisualizzazione extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class ServletRicercaTraDueDate extends HttpServlet {
 
+	private static final long serialVersionUID = 1L;
 	Support db = new Support();
 
-	public ServletVisualizzazione() {
+	public ServletRicercaTraDueDate() {
 		// vuoto
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("enter servlet visualizzazione");
+		String dataUno = request.getParameter("primaData");
+		String dataDue = request.getParameter("secondaData");
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
@@ -69,7 +71,7 @@ public class ServletVisualizzazione extends HttpServlet {
 		out.println("</tr>");
 		out.println("</thead>");
 		out.println("<tbody>");
-		List<Appuntamento> appuntamenti = getAppuntamentiFromDB();
+		List<Appuntamento> appuntamenti = getAppuntamentiFromDB(dataUno, dataDue);
 		for (Appuntamento appuntamento : appuntamenti) {
 			out.println("<tr>");
 			out.println("<td>" + appuntamento.getId() + "</td>");
@@ -86,15 +88,17 @@ public class ServletVisualizzazione extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 
-	}// chiusura do get
+	}// do get
 
-	private List<Appuntamento> getAppuntamentiFromDB() {
+	private List<Appuntamento> getAppuntamentiFromDB(String dataUno, String dataDue) {
 
 		List<Appuntamento> appuntamenti = new ArrayList<Appuntamento>();
 		try {
 			Connection con = db.OpenConnection();
-			String query = "SELECT * FROM impegni";
+			String query = "SELECT * FROM impegni WHERE dataAppuntamento BETWEEN ? AND ?";
 			PreparedStatement pstmt = con.prepareStatement(query);
+			pstmt.setString(1, dataUno);
+			pstmt.setString(2, dataDue);
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Appuntamento appuntamento = new Appuntamento();
@@ -119,4 +123,4 @@ public class ServletVisualizzazione extends HttpServlet {
 
 	}// metodo che prende i dati dal db
 
-}// chiusura classe
+}// close sevlet

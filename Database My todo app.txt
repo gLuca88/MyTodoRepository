@@ -21,3 +21,6 @@ drop Table impegni;
 Insert into utente(email,passwordUtente)
 values('gianluca@88','password2');
 Select *from utente;
+
+credenziali gianluca@	password
+gianluca@88	password2

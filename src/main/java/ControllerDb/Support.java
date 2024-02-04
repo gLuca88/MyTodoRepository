@@ -9,10 +9,10 @@ public class Support {
 	private String password = "gianluca";
 	private String user = "root";
 	private String host = "localhost";
-	private String port ="3306";
+	private String port = "3306";
 	private String dbName = "myTodoApp";
 	private Connection con;
-   
+
 	public Support() {
 		super();
 	}

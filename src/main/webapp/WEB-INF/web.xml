@@ -79,4 +79,34 @@
 		<servlet-name>ServletElimina</servlet-name>
 		<url-pattern>/ServletElimina</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ServletModificaGenereale</display-name>
+		<servlet-name>ServletModificaGenerale</servlet-name>
+		<servlet-class>GestioneModifiche.ServletModificaGenerale</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletModificaGenerale</servlet-name>
+		<url-pattern>/ServletModificaGenerale</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ServletCercaPerData</display-name>
+		<servlet-name>ServletCercaPerData</servlet-name>
+		<servlet-class>GestioneFiltri.ServletCercaPerData</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletCercaPerData</servlet-name>
+		<url-pattern>/ServletCercaPerData</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ServletRicercaTraDueDate</display-name>
+		<servlet-name>ServletRicercaTraDueDate</servlet-name>
+		<servlet-class>GestioneFiltri.ServletRicercaTraDueDate</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletRicercaTraDueDate</servlet-name>
+		<url-pattern>/ServletRicercaTraDueDate</url-pattern>
+	</servlet-mapping>
 </web-app>

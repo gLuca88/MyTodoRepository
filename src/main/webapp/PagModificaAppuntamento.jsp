@@ -30,7 +30,7 @@
 
 
 	<img src="immagineApp.jpeg" alt="immagine">
-	<a href="LogoutServlet">LOGOUT</a>
+	<a href="HomeAppuntamenti.jsp">Home</a>
 	<br>
 	<br>
 	<form action="ServletVisualizzazione" method="get">
@@ -43,11 +43,11 @@
 			<label for="NumeroId">Inserisci ID dell'appuntamento da
 				Eliminare:</label> <input type="number" class="form-control"
 				id="NumeroIdDue" name="NumeroIdDue" required>
-		</div><br>
-		<input class="btn btn-info" type="submit" value="ELIMINA">
+		</div>
+		<br> <input class="btn btn-info" type="submit" value="ELIMINA">
 	</form>
 	<h1 class="mb-4">Modifica appuntamento:</h1>
-	<form id="prenotazioneForm" action="ServletModificaAppuntamenti"
+	<form id="prenotazioneForm" action=ServletModificaGenerale
 		method="post">
 		<div class="form-group">
 			<label for="NumeroId">Inserisci ID dell'appuntamento da
@@ -119,16 +119,14 @@
 				rows="5" cols="40"
 				placeholder="Scrivi qui la descrizione dell'appuntamento"></textarea>
 		</div>
-		<label for="statusNuovo">Inserisci Nuovo status :</label><br><select
-				class="form-control" id="statusNuovo" name="statusNuovo">
-				<option value="Non Definito">Non Definito</option>
-				<option value="Fatto">Fatto</option>
-				<option value="Da Fare">Da Fare</option>
+		<label for="statusNuovo">Inserisci Nuovo status :</label><br>
+		<select class="form-control" id="statusNuovo" name="statusNuovo">
+			<option value="Non Definito">Non Definito</option>
+			<option value="Fatto">Fatto</option>
+			<option value="Da Fare">Da Fare</option>
 
-			</select>
+		</select> <br> <input class="btn btn-info" type="submit" value="Modifica">
 
-		<br> <input class="btn btn-info" type="submit" value="Modifica">
-		<a href="HomeAppuntamenti.jsp">Home</a>
 	</form>
 </body>
 </html>

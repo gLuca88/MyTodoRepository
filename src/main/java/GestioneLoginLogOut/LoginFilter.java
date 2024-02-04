@@ -16,42 +16,29 @@ import jakarta.servlet.http.HttpSession;
 public class LoginFilter implements Filter {
 
 	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException
-	{
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		System.out.println("REQUEST IN INGRESSO");
-		HttpSession session = ((HttpServletRequest)request).getSession();
-		
-		
-		boolean isLoginPage = ((HttpServletRequest)request).getRequestURI().endsWith("/ServletLogin")||((HttpServletRequest)request).getRequestURI().endsWith("/login.jsp");
-		Object user=session.getAttribute("userObj");
-		System.out.println("USER: "+user);
-		if(isLoginPage)
-		{
-			 chain.doFilter(request, response);
-		}
-		else if(user!=null)
-		{
+		HttpSession session = ((HttpServletRequest) request).getSession();
 
-				System.out.println("L'utente è loggato");
-			 chain.doFilter(request, response);
-			 return;
-		}
-		else
-		{
+		boolean isLoginPage = ((HttpServletRequest) request).getRequestURI().endsWith("/ServletLogin")
+				|| ((HttpServletRequest) request).getRequestURI().endsWith("/login.jsp");
+		Object user = session.getAttribute("userObj");
+		System.out.println("USER: " + user);
+		if (isLoginPage) {
+			chain.doFilter(request, response);
+		} else if (user != null) {
+
+			System.out.println("L'utente è loggato");
+			chain.doFilter(request, response);
+			return;
+		} else {
 			System.out.println("L'utente deve effettuare la login");
-			 RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-			 dispatcher.forward(request, response);
-			  return;
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request, response);
+			return;
 		}
-		
-		
-	
-		
-		
-		
-		
-	}
-	
 
+	}
 
 }

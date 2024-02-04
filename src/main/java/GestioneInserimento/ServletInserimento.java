@@ -14,30 +14,35 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 public class ServletInserimento extends HttpServlet {
-private static final long serialVersionUID = 1L;
-Support db=new Support();	
-public ServletInserimento() {
-	
-}
-protected void doPost(HttpServletRequest request, HttpServletResponse response)
-		throws ServletException, IOException {
-	    System.out.println("enter servlet");
-	    response.setContentType("text/html");
+	private static final long serialVersionUID = 1L;
+	Support db = new Support();
+
+	public ServletInserimento() {
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		System.out.println("enter servlet");
+		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		// String idImpegno=request.getParameter("id");
 		String dataAppuntamento = request.getParameter("data");
 		String descrizione = request.getParameter("descrizione");
 		String oraInizio = request.getParameter("orarioInizio");
 		String oraFine = request.getParameter("orarioFine");
-		String status=request.getParameter("status");
+		String status = request.getParameter("status");
 		try {
-			Connection con=db.OpenConnection();
-			String query = "SELECT * FROM impegni WHERE dataAppuntamento = ? AND ((oraInizio <= ? AND oraFine >= ?) OR (oraInizio <= ? AND oraFine >= ?))";
+			Connection con = db.OpenConnection();
+			String query = "SELECT * FROM impegni WHERE dataAppuntamento = ? AND ((oraInizio <= ? AND oraFine >= ?) OR (oraInizio <= ? AND oraFine >= ?) OR (oraInizio >= ? AND oraFine <= ?))";
 			PreparedStatement pstmt = con.prepareStatement(query);
 			pstmt.setObject(1, dataAppuntamento);
 			pstmt.setObject(2, oraInizio);
 			pstmt.setObject(3, oraInizio);
 			pstmt.setObject(4, oraFine);
 			pstmt.setObject(5, oraFine);
+			pstmt.setObject(6, oraInizio);
+			pstmt.setObject(7, oraFine);
 			ResultSet rs = pstmt.executeQuery();
 			if (rs.next()) {
 				out.println("<script type=\"text/javascript\">");
@@ -68,8 +73,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			// chiudiamo le connessioni
 			pstmt.close();
 			con.close();
-			
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("Problem");
@@ -77,13 +81,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-			
-			
-		
-	    
-	    
-	
-}//di post	
-	
 
-}//classe
+	}// di post
+
+}// classe
