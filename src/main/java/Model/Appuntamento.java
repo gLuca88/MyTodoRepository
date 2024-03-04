@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 public class Appuntamento {
+	
 	private int id;
 	private Date dataAppuntamento;
 	private String descrizione;
@@ -81,5 +82,5 @@ public class Appuntamento {
 	public void setStato(String stato) {
 		this.stato = stato;
 	}
-
+    
 }// classe
